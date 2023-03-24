@@ -8,12 +8,12 @@ for a `DATABASE_URL` environment variable (perhaps in a .env file).
 3. Install the app dependencies, build the app and run migrations
 ###### macOS/Linux:
 ```sh
-npm ci && npm run build && npx prisma migrate deploy
+npm ci && npm run build && npx prisma migrate dev
 ```
 
 ###### Windows:
 ```sh
-npm ci; npm run build; npx prisma migrate deploy
+npm ci; npm run build; npx prisma migrate dev
 ```
 
 ### Start the server
