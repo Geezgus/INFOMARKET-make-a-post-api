@@ -8,6 +8,7 @@ const controller = {
     try {
       const posts = await prisma.posts.findMany({
         select: {
+          createdAt: true,
           title: true,
           content: true,
           author: true,
