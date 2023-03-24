@@ -1,12 +1,12 @@
 import { Request, Response } from 'express'
-import { AddressInfo } from 'net'
-import { listener } from '../app'
 
 const controller = {
   findEndpoints: (req: Request, res: Response) => {
-    const address = listener.address() as AddressInfo
+    const baseURL = `${req.protocol}://${req.get('host')}`
 
-    const endpoints = {}
+    const endpoints = {
+      posts: `${baseURL}/posts`,
+    }
 
     res.status(200).send(endpoints)
   },
