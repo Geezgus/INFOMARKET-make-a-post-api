@@ -3,11 +3,13 @@ import { Server } from 'http'
 import { AddressInfo } from 'net'
 
 import indexRouter from './routes/index'
+import postsRouter from './routes/posts'
 
 const app = express()
 app.use(express.json())
 
 app.use('/', indexRouter)
+app.use('/posts', postsRouter)
 
 const port = process.env.PORT || 3333
 
