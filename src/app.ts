@@ -1,12 +1,14 @@
 import express from 'express'
 import { Server } from 'http'
 import { AddressInfo } from 'net'
+import cors from 'cors'
 
 import indexRouter from './routes/index'
 import postsRouter from './routes/posts'
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.use('/', indexRouter)
 app.use('/posts', postsRouter)
